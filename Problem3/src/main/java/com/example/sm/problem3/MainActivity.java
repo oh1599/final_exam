@@ -30,8 +30,11 @@ public class MainActivity extends AppCompatActivity {
         for(CustomerThread ct : list){
 
             try {
-                // need something here
-            } catch (InterruptedException e) { }
+                ct.run();
+            } catch (Exception e)
+            {
+                e.printStackTrace();
+            }
         }
 
         manager.sort();
@@ -51,7 +54,11 @@ class CustomerThread extends Thread{
     CustomerThread(Customer customer){
         this.customer = customer;
     }
-    // need something here
+    public void run()
+    {
+
+    }
+
 }
 
 abstract class Person{
@@ -70,7 +77,10 @@ class Customer extends Person{
         this.name = name;
     }
 
-    // need something here
+    void work()
+    {
+
+    }
 }
 
 
